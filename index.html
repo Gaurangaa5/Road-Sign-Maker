@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Police Road Sign Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-icon" aria-hidden="true">✦</div>
+  <div><p class="eyebrow">PUBLIC ROAD SIGN DESIGNER</p><h1>Police Road Sign Studio</h1></div>
+  <span class="top-status"><i></i> LOCAL WORKSPACE</span>
+</header>
+
+<main class="shell">
+  <section class="intro">
+    <div><p class="eyebrow accent">SIGN BUILDER</p><h2>Make clear, high-visibility road signs.</h2>
+    <p>Design landscape signs for road closures, diversions, traffic control and public safety. Preview, screenshot and print.</p></div>
+    <div class="intro-symbol" aria-hidden="true">⚠</div>
+  </section>
+
+  <div class="workspace">
+    <aside class="controls">
+      <div class="section-head"><div><p class="eyebrow">CONTROLS</p><h3>Sign content</h3></div><span class="number">01</span></div>
+
+      <label class="label" for="logoUpload">Department logo</label>
+      <div class="upload-row"><div class="upload-icon">↥</div><div class="upload-text"><strong>Upload logo</strong><span>PNG, JPG, WEBP or SVG</span></div><label class="choose-file" for="logoUpload">Choose</label><input id="logoUpload" type="file" accept="image/*,.svg"></div>
+      <div class="asset-actions"><button type="button" class="asset-remove" id="removeLogoBtn">Remove logo</button></div>
+      <p class="hint" id="logoStatus">No logo uploaded. Placeholder badge shown.</p>
+
+      <label class="label" for="fontUpload">Custom font from your computer</label>
+      <input id="fontUpload" type="file" accept=".ttf,.otf,.woff,.woff2">
+      <div class="asset-actions"><button type="button" class="asset-remove" id="removeFontBtn">Remove font</button></div>
+      <p class="hint" id="fontStatus">TTF, OTF, WOFF and WOFF2 supported.</p>
+
+      <div class="grid two">
+        <div><label class="label" for="signColor">Sign background</label><div class="color-box"><input id="signColor" type="color" value="#f5c400"><span>Choose colour</span></div></div>
+        <div><label class="label" for="textColor">Text colour</label><select id="textColor"><option value="#111820">Black</option><option value="#ffffff">White</option><option value="#142b4a">Navy blue</option></select></div>
+      </div>
+      <div><label class="label" for="department">Department name</label><input id="department" type="text" value="GAURANGAA POLICE DEPARTMENT" maxlength="80"></div>
+      <div><label class="label" for="headline">Main text</label><textarea id="headline" rows="2" maxlength="90">ROAD CLOSURE</textarea></div>
+      <div><label class="label" for="subline">Subtext</label><input id="subline" type="text" value="Please turn right." maxlength="90"></div>
+      <div class="size-control"><label class="label" for="headlineSize">Main text size <output id="headlineSizeValue">8.2</output></label><input id="headlineSize" type="range" min="3" max="14" step="0.2" value="8.2"></div>
+      <div class="size-control"><label class="label" for="sublineSize">Subtext size <output id="sublineSizeValue">3.4</output></label><input id="sublineSize" type="range" min="1.5" max="8" step="0.1" value="3.4"></div>
+      <div class="size-control"><label class="label" for="logoTextSize">Logo text size <output id="logoTextSizeValue">2.1</output></label><input id="logoTextSize" type="range" min="0.8" max="4.5" step="0.1" value="2.1"></div>
+      <div><label class="label" for="arrow">Arrow (optional)</label><select id="arrow"><option value="none">No arrow</option><option value="left">← Left</option><option value="right">Right →</option><option value="both">↔ Both directions</option><option value="up">↑ Straight ahead</option></select></div>
+      <div class="actions"><button id="resetBtn" class="btn quiet" type="button">Reset sample</button><button id="printBtn" class="btn primary" type="button">Print sign ↗</button></div>
+      
+    </aside>
+
+    <section class="preview-column">
+      <div class="preview-header"><div><p class="eyebrow">LIVE PREVIEW</p><h3>Landscape sign</h3></div><div class="preview-actions"><button class="btn dark" id="screenshotBtn" type="button">Screenshot mode</button></div></div>
+      <div class="preview-stage">
+        <article id="sign" class="sign" aria-label="Landscape road sign preview">
+          <div class="sign-border">
+            <div class="sign-top">
+              <div class="logo-slot" id="logoSlot"><svg viewBox="0 0 100 110" class="placeholder" aria-label="Placeholder badge"><path d="M50 4 89 20v28c0 26-16 44-39 58C27 92 11 74 11 48V20L50 4Z" fill="#fff" stroke="#172b45" stroke-width="4"/><path d="m31 52 13 13 26-29" fill="none" stroke="#172b45" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="department" id="previewDepartment">GAURANGAA POLICE DEPARTMENT</div>
+              
+            </div>
+            <div class="main-layout">
+              <div class="arrow" id="previewArrow"></div>
+              <div class="words"><h1 id="previewHeadline">ROAD CLOSURE</h1><h2 id="previewSubline">Please turn right.</h2></div>
+            </div>
+            
+          </div>
+        </article>
+      </div>
+      <div class="preview-note"><span></span> Landscape preview updates as you type <b>•</b> Use Screenshot mode, then capture your screen</div>
+    </section>
+  </div>
+  <footer><span>POLICE ROAD SIGN STUDIO</span></footer>
+</main>
+</body>
+</html>
