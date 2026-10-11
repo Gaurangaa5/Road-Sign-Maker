@@ -62,3 +62,23 @@ body.screenshot-mode .sign{
 }
 
 .asset-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px;margin-top:7px}.asset-remove{border:1px solid #d8a7a7;background:#fff7f7;color:#a02f2f;border-radius:7px;padding:7px 10px;font:700 10px var(--ui);cursor:pointer}.asset-remove:hover{background:#ffecec}
+
+/* Small side button available only in screenshot mode. */
+.screenshot-exit{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid #d5deea;
+  border-radius:8px;
+  padding:8px 11px;
+  background:#172b45;
+  color:#fff;
+  box-shadow:0 3px 12px #172b4530;
+  font:700 11px var(--ui);
+  cursor:pointer;
+}
+.screenshot-exit:hover{background:#294568}
+body.screenshot-mode .screenshot-exit{display:block}
