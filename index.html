@@ -8,7 +8,7 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-<button type="button" id="exitScreenshotBtn" class="screenshot-exit" aria-label="Exit screenshot mode">Exit</button>
+<button type="button" id="exitScreenshotBtn" class="screenshot-exit" aria-label="Exit screenshot mode" onclick="document.body.classList.remove('screenshot-mode')" style="display:none;position:fixed;right:14px;top:50%;left:auto;bottom:auto;transform:translateY(-50%);z-index:99999;border:1px solid #d5deea;border-radius:8px;padding:8px 11px;background:#172b45;color:#fff;box-shadow:0 3px 12px #172b4530;font:700 11px Arial,sans-serif;cursor:pointer">Exit</button>
 <header class="topbar">
   <div class="brand-icon" aria-hidden="true">✦</div>
   <div><p class="eyebrow">ROAD SIGN DESIGNER</p><h1>Road Sign Maker</h1></div>

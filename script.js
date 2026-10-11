@@ -58,6 +58,10 @@
   });
   $('screenshotBtn').addEventListener('click',()=>{document.body.classList.add('screenshot-mode');});
   $('exitScreenshotBtn').addEventListener('click',()=>{document.body.classList.remove('screenshot-mode');});
+  const exitButton = $('exitScreenshotBtn');
+  const syncExitButton = () => { exitButton.style.display = document.body.classList.contains('screenshot-mode') ? 'block' : 'none'; };
+  new MutationObserver(syncExitButton).observe(document.body, {attributes:true, attributeFilter:['class']});
+  syncExitButton();
   document.addEventListener('keydown',e=>{if(e.key==='Escape')document.body.classList.remove('screenshot-mode');});
   $('printBtn').addEventListener('click',()=>window.print());
   $('resetBtn').addEventListener('click',()=>{Object.entries(defaults).forEach(([id,val])=>$(id).value=val);$('logoUpload').value='';$('fontUpload').value='';if(logoUrl)URL.revokeObjectURL(logoUrl);if(fontUrl)URL.revokeObjectURL(fontUrl);logoUrl=null;fontUrl=null;placeholderHidden=false;$('sign').querySelector('.sign-top').classList.remove('no-logo');$('removePlaceholderBtn').textContent='Remove placeholder badge';$('logoSlot').innerHTML='<svg viewBox="0 0 100 110" class="placeholder" aria-label="Placeholder badge"><path d="M50 4 89 20v28c0 26-16 44-39 58C27 92 11 74 11 48V20L50 4Z" fill="#fff" stroke="#172b45" stroke-width="4"/><path d="m31 52 13 13 26-29" fill="none" stroke="#172b45" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';$('logoStatus').textContent='No logo uploaded. Placeholder badge shown.';$('fontStatus').textContent='DA Road Signs is the default sign font. You can upload another font if needed.';$('sign').style.fontFamily='"DA Road Signs", Arial, sans-serif';update();});
